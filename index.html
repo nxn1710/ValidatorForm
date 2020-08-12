@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="register-form">
+        <form action="" method="POST" id="form1">
+            <div class="form-group">
+                <label for="fullname" class="form-label">Full Name</label>
+                <div>
+                    <div>
+                        <div>
+                            <input id="fullname" name="fullname" type="text" placeholder="VD: Nguyễn Xuân Nghiệp">
+
+                        </div>
+                    </div>
+                </div>
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="username" class="form-label">Username</label>
+                <input id="username" name="username" type="text" placeholder="VD: usernxn">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email address</label>
+                <input id="email" name="email" type="text" placeholder="VD: nguyenxuannghiep@email.com">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="province" class="form-label">Address</label>
+                <select id="province">
+                    <option value="">---Choose city---</option>
+                    <option value="1">Da nang</option>
+                    <option value="2">Quang Nam</option>
+                </select>
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group gender">
+                <label for="gender" class="form-label">Gender</label>
+                <div>
+                    <input  name="gender" type="checkbox" value="male">Male
+                </div>
+                <div>
+                    <input  name="gender" type="checkbox" value="female">Female
+                </div>
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input id="password" name="password" type="password" placeholder="Nhập mật khẩu">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="passwordAgain" class="form-label">Confirm Password</label>
+                <input id="passwordAgain" name="passwordAgain" type="password" placeholder="Nhập lại mật khẩu">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="number" class="form-label">Confirm Password</label>
+                <input id="number" name="number" type="text" placeholder="ssoos">
+                <span class="form-message"></span>
+            </div>
+            <button type="submit" class="btn-submit">Register</button>
+        </form>
+    </div>
+    <script src="validator.js"></script>
+    <script>
+        Validator({
+            form: '#form1',
+            errSelector: '.form-message',
+            formGroupSelector: '.form-group',
+            rules: [
+                Validator.isRequired('#fullname', 'Please fill this field'),
+                Validator.isRequired('#username', 'Please fill this field'),
+                Validator.isDouble('#number', 'Please choose this field'),
+                Validator.isRequired('#province', 'Please choose this field'),
+                Validator.isRequired('input[name="gender"]', 'Please fill this field'),
+                // Validator.isRequired('#email','Please fill this field'),
+                Validator.isEmail('#email', 'Please fill valid email'),
+                Validator.minLength('#password', 6, 'Password must be as least 6 character'),
+                Validator.minLength('#passwordAgain', 6, 'Password must be as least 6 character'),
+                Validator.isComfirmed('#passwordAgain', function () {
+                    return document.querySelector('#form1 #password').value;
+                }, 'Password not same')
+            ],
+            onSubmit: function(data) {
+                console.log(data)
+            }
+        });
+    </script>
+</body>
+
+</html>
