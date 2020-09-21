@@ -1,75 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;0,800;1,800&display=swap');
-html {
-    background-color: #F2F4F5;
-    font-family: 'Open Sans', sans-serif;
-}
-.register-form {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 310px;
-    background-color: #fff;
-    padding: 30px 25px 20px;
-    border: 1px solid #999;
+.jumbotron {
+    background-color: #9575CD;
+    margin-bottom: 0;
 }
 
-
-.form-group {
-    margin: 0 0 20px;
+.history {
+    margin: 40px 0;
 }
 
-.form-label{
-    display: block;
-    margin-bottom: 7px;
-    font-weight: 200 !important;
-    outline:none;
-    font-size: 14px;
-}
-.form-group input {
-    width: 305px;
-    height: 38px;
-    padding: 0 0 0 5px;
-    margin: 0;
-    border: 1px solid #777;
-    border-radius: 4px;
-    font-size: 14px;
+.footer {
+    background-color: #D1C4E9;
 }
 
-.form-group.gender input {
-    width: 20px;
+.header__nav {
+    background-color: #5133A5;
 }
 
-.form-group.gender {
-    display: flex;
+.header__logo {
+    width: 300px;
+    height: 100px;
 }
 
-.form-group input:focus {
-    border-width: 1px;
-    border-color: #05AF9E;
-    outline: 0 none;
+.btn-yellow {
+    background-color: #FDC02F;
+    width: 250px;
+    height: 50px;
+    line-height: 40px;
+    margin-top: 40px;
 }
 
-.btn-submit {
-    width: 310px;
-    height: 40px;
-    border: 0px;
-    background-color: #05AF9E;
-    border-radius: 8px;
+.row-header {
     color: #fff;
-    font-weight: 500;
-    font-size: 16px;
 }
 
-.form-group.invalid input{
-    border: 1px solid #F33A58;
-    background-color: #fdebee;
-}
-
-.form-group.invalid input:focus {
-    background-color: #fff;
-}
-.form-group.invalid .form-message {
-    color: #F33A58;
-    font-size: 10px;
+.my-10 {
+    margin: 100px 0;
 }
